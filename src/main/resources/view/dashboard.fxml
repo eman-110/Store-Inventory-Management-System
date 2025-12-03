@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="gui.DashboardController"
+            prefHeight="695.0" prefWidth="1050.0"
+            styleClass="dashboard-root">
+
+    <children>
+
+        <!-- Header -->
+        <Label text="Dashboard"
+               styleClass="dashboard-title"
+               AnchorPane.leftAnchor="30.0"
+               AnchorPane.topAnchor="30.0"/>
+
+        <!-- Filter Buttons -->
+        <HBox spacing="12.0"
+              AnchorPane.topAnchor="30.0"
+              AnchorPane.rightAnchor="30.0">
+            <children>
+                <Button fx:id="storeButton"
+                        mnemonicParsing="false"
+                        text="Store"
+                        onAction="#handleFilterSelection"
+                        styleClass="filter-button filter-button-active"/>
+                <Button fx:id="userButton"
+                        mnemonicParsing="false"
+                        text="User"
+                        onAction="#handleFilterSelection"
+                        styleClass="filter-button"/>
+                <Button fx:id="auctionButton"
+                        mnemonicParsing="false"
+                        text="Auction"
+                        onAction="#handleFilterSelection"
+                        styleClass="filter-button"/>
+            </children>
+        </HBox>
+
+        <!-- Low Stock Card -->
+        <AnchorPane AnchorPane.leftAnchor="30.0"
+                    AnchorPane.topAnchor="100.0"
+                    prefWidth="520.0"
+                    prefHeight="360.0"
+                    styleClass="low-stock-card">
+            <children>
+                <VBox spacing="15.0"
+                      AnchorPane.leftAnchor="20.0"
+                      AnchorPane.rightAnchor="20.0"
+                      AnchorPane.topAnchor="20.0"
+                      AnchorPane.bottomAnchor="20.0">
+                    <children>
+                        <Label text="Low Stock"
+                               styleClass="card-title"/>
+
+                        <HBox spacing="10.0"
+                              styleClass="table-header">
+                            <children>
+                                <Label text="Item Name"
+                                       maxWidth="Infinity"
+                                       HBox.hgrow="ALWAYS" />
+                                <Label text="Quantity"
+                                       alignment="CENTER_RIGHT" />
+                            </children>
+                        </HBox>
+
+                        <TableView fx:id="lowStockTable"
+                                   prefHeight="260.0"
+                                   styleClass="low-stock-table">
+                            <columns>
+                                <TableColumn fx:id="itemNameColumn"
+                                             text="Item Name"
+                                             prefWidth="340.0"/>
+                                <TableColumn fx:id="quantityColumn"
+                                             text="Quantity"
+                                             prefWidth="120.0"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+
+        <!-- Metrics Grid -->
+        <GridPane hgap="20.0" vgap="20.0"
+                  AnchorPane.topAnchor="100.0"
+                  AnchorPane.rightAnchor="30.0"
+                  AnchorPane.leftAnchor="580.0">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+
+            <children>
+                <VBox styleClass="metric-card gradient-1" spacing="10.0"
+                      GridPane.columnIndex="0"
+                      GridPane.rowIndex="0">
+                    <Label fx:id="totalStoreItemsLabel"
+                           styleClass="metric-value"
+                           text="0"/>
+                    <Label text="Total Store Item"
+                           styleClass="metric-label"/>
+                </VBox>
+
+                <VBox styleClass="metric-card gradient-2" spacing="10.0"
+                      GridPane.columnIndex="1"
+                      GridPane.rowIndex="0">
+                    <Label fx:id="totalInStoreLabel"
+                           styleClass="metric-value"
+                           text="0"/>
+                    <Label text="Total In Store Item"
+                           styleClass="metric-label"/>
+                </VBox>
+
+                <VBox styleClass="metric-card gradient-3" spacing="10.0"
+                      GridPane.columnIndex="0"
+                      GridPane.rowIndex="1">
+                    <Label fx:id="totalTemporaryAssignedLabel"
+                           styleClass="metric-value"
+                           text="0"/>
+                    <Label text="Total Temporary Assigned Item"
+                           styleClass="metric-label"/>
+                </VBox>
+
+                <VBox styleClass="metric-card gradient-4" spacing="10.0"
+                      GridPane.columnIndex="1"
+                      GridPane.rowIndex="1">
+                    <Label fx:id="totalPermanentAssignedLabel"
+                           styleClass="metric-value"
+                           text="0"/>
+                    <Label text="Total Permanent Assigned Item"
+                           styleClass="metric-label"/>
+                </VBox>
+            </children>
+        </GridPane>
+
+    </children>
+</AnchorPane>

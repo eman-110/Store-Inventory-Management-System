@@ -1,0 +1,125 @@
+/* Root styling */
+.dashboard-root {
+    -fx-background-color: linear-gradient(to right, #faf7ff, #f0edff);
+    -fx-padding: 20;
+}
+
+/* Dashboard Header */
+.dashboard-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #14015c;
+}
+
+/* Filter Buttons */
+.filter-button {
+    -fx-background-color: rgba(20, 1, 92, 0.12);
+    -fx-text-fill: #14015c;
+    -fx-font-weight: 600;
+    -fx-background-radius: 999;
+    -fx-padding: 6 26;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.filter-button-active {
+    -fx-background-color: #14015c;
+    -fx-text-fill: white;
+}
+
+.filter-button:hover {
+    -fx-background-color: #c2b7eb;
+}
+
+/* Low Stock Card */
+.low-stock-card {
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+    -fx-border-color: #14015c;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(14, 8, 103, 0.12), 18, 0, 0, 8);
+}
+
+.card-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #14015c;
+}
+
+.table-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #14015c;
+    -fx-border-color: transparent transparent #e1ddf7 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 8 0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 0;
+    -fx-justify-content: space-between;
+}
+
+.low-stock-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.low-stock-table .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.low-stock-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 6 0 6 0;
+}
+
+.low-stock-table .table-row-cell:odd {
+    -fx-background-color: rgba(20, 1, 92, 0.03);
+}
+
+.low-stock-table .table-row-cell:selected {
+    -fx-background-color: rgba(20, 1, 92, 0.15);
+}
+
+.low-stock-table .table-column {
+    -fx-alignment: CENTER_LEFT;
+    -fx-text-fill: #1f163f;
+    -fx-font-size: 14px;
+}
+
+/* Metric Cards */
+.metric-card {
+    -fx-background-radius: 32;
+    -fx-padding: 28;
+    -fx-pref-height: 150;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 20, 0, 0, 8);
+}
+
+.metric-card .metric-value {
+    -fx-font-size: 48px;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+}
+
+.metric-card .metric-label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+}
+
+.gradient-1 {
+    -fx-background-color: linear-gradient(to bottom right, #1c0a6c, #6f68c7);
+}
+
+.gradient-2 {
+    -fx-background-color: linear-gradient(to bottom right, #2d0b88, #8a7de3);
+}
+
+.gradient-3 {
+    -fx-background-color: linear-gradient(to bottom right, #251066, #7f6af0);
+}
+
+.gradient-4 {
+    -fx-background-color: linear-gradient(to bottom right, #1a0a57, #8d7adf);
+}
